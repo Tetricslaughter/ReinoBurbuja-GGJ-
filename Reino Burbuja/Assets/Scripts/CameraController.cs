@@ -14,7 +14,8 @@ namespace TMPro.Examples
 
         public Transform CameraTarget;
 
-        public float FollowDistance = 30.0f;
+        public float FollowDistance = 25.0f;
+        public float offSet = -25.0f;
         public float MaxFollowDistance = 100.0f;
         public float MinFollowDistance = 2.0f;
 
@@ -79,7 +80,7 @@ namespace TMPro.Examples
         // Update is called once per frame
         void LateUpdate()
         {
-            GetPlayerInput();
+          //  GetPlayerInput();
 
 
             // Check if we still have a valid target
@@ -91,7 +92,8 @@ namespace TMPro.Examples
                 }
                 else if (CameraMode == CameraModes.Follow)
                 {
-                    desiredPosition = CameraTarget.position + CameraTarget.TransformDirection(Quaternion.Euler(ElevationAngle, OrbitalAngle, 0f) * (new Vector3(0, 0, -FollowDistance)));
+                    desiredPosition = CameraTarget.position + new Vector3(0,FollowDistance,offSet) ;
+                   // desiredPosition = CameraTarget.position + CameraTarget.TransformDirection(Quaternion.Euler(ElevationAngle, OrbitalAngle, 0f) * (new Vector3(0, 0, -FollowDistance)));
                 }
                 else
                 {
@@ -102,19 +104,19 @@ namespace TMPro.Examples
                 {
                     // Using Smoothing
                     cameraTransform.position = Vector3.SmoothDamp(cameraTransform.position, desiredPosition, ref currentVelocity, MovementSmoothingValue * Time.fixedDeltaTime);
-                    //cameraTransform.position = Vector3.Lerp(cameraTransform.position, desiredPosition, Time.deltaTime * 5.0f);
+                   // cameraTransform.position = Vector3.Lerp(cameraTransform.position, desiredPosition, Time.deltaTime * 5.0f);
                 }
                 else
                 {
                     // Not using Smoothing
                     cameraTransform.position = desiredPosition;
                 }
-
+                
                 if (RotationSmoothing == true) 
-                  cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, Quaternion.LookRotation(CameraTarget.position - cameraTransform.position), RotationSmoothingValue * Time.deltaTime);
+                 cameraTransform.rotation = Quaternion.Lerp(cameraTransform.rotation, Quaternion.LookRotation(CameraTarget.position - cameraTransform.position), RotationSmoothingValue * Time.deltaTime);
                 else
                 {
-                    cameraTransform.LookAt(CameraTarget);
+                 //cameraTransform.LookAt(CameraTarget);
                 }
 
             }

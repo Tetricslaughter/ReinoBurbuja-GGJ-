@@ -6,7 +6,6 @@ public class RotateCharacter : MonoBehaviour
     {
         Vector3 objective = MousePosition();
         objective.y = transform.position.y;
-        Debug.Log(MousePosition());
         transform.LookAt(objective);
     }
 
