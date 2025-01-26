@@ -12,9 +12,9 @@ public class ShotgunItem : MonoBehaviour
     {
         player = GameObject.Find("Player");
         shotgunScript = player.GetComponent<Shotgun>();
-        pistol = player.transform.GetChild(3).gameObject;
-        shotgun = player.transform.GetChild(4).gameObject;
-        minigun = player.transform.GetChild(5).gameObject;
+        pistol = player.transform.GetChild(5).gameObject;
+        shotgun = player.transform.GetChild(6).gameObject;
+        minigun = player.transform.GetChild(7).gameObject;
 
 
 

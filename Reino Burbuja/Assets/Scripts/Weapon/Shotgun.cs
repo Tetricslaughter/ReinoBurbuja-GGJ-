@@ -14,7 +14,7 @@ public class Shotgun : Weapon
         id = "Escopeta";
         cont = 0;
         nextShot = 0;
-        this.fireRate = 0.5f;
+        //this.fireRate = 0.5f;
     }
 
     // Update is called once per frame
@@ -28,9 +28,9 @@ public class Shotgun : Weapon
         }
         if (Input.GetMouseButtonUp(0)) 
         {
-           particleSystem.Stop(); 
+          // particleSystem.Stop(); 
         }
-        if (cont == 6) 
+        if (cont == maxAmmo) 
         {
             pistol.SetActive(true);
             shotgun.SetActive(false);
@@ -39,7 +39,7 @@ public class Shotgun : Weapon
       //      scriptShotgun.enabled =false;
       //      scriptPistol.enabled =true;
         }
-        Debug.Log(cont);
+        
     }
     public override void Shoot()
     {
