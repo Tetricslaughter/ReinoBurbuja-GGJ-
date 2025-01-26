@@ -15,7 +15,7 @@ public class MoveEnemy : MonoBehaviour
      Transform playerPosition;
     void Start()
     {
-        baseLocation = GameObject.Find("base").transform;
+        baseLocation = GameObject.Find("Castillo").transform;
         playerPosition= GameObject.Find("Player").transform;
         detectionRange = 10f;
         speed = 5f;
