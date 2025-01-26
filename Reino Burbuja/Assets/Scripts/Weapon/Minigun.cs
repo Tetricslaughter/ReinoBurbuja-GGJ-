@@ -7,7 +7,8 @@ public class Minigun : Weapon
     [SerializeField] GameObject pistol;
     [SerializeField] GameObject minigun;
     [SerializeField] ParticleSystem particleSystem;
-   
+    public SonidoDisparo sonidoDisparo;
+
 
     public float timeCount;
     
@@ -27,7 +28,7 @@ public class Minigun : Weapon
         if (Input.GetMouseButtonDown(0) && minigun.activeInHierarchy)
         {
            Shoot();
-           
+            
         }
         if (Input.GetMouseButtonUp(0)) 
         {
@@ -36,9 +37,10 @@ public class Minigun : Weapon
         if (Input.GetMouseButton(0) && minigun.activeInHierarchy)
         {
             timeCount += 1 * Time.deltaTime;
+            //sonidoDisparo.PlayClipontinou();
         }
       
-        if (timeCount > 15) 
+        if (timeCount > 8) 
         {
           minigun.SetActive(false);
           pistol.SetActive(true);
