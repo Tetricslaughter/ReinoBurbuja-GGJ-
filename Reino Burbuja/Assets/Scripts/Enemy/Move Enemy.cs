@@ -10,11 +10,13 @@ public class MoveEnemy : MonoBehaviour
     float detectionRange;
     bool  playerDetected;
     Collider[] colliders;
-    [SerializeField] Transform baseLocation;
+     Transform baseLocation;
     [SerializeField] LayerMask playerMask;
-    [SerializeField] Transform playerPosition;
+     Transform playerPosition;
     void Start()
     {
+        baseLocation = GameObject.Find("base").transform;
+        playerPosition= GameObject.Find("Player").transform;
         detectionRange = 10f;
         speed = 5f;
         agent = GetComponent<NavMeshAgent>();
