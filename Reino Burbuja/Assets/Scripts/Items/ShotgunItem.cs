@@ -8,6 +8,10 @@ public class ShotgunItem : MonoBehaviour
     GameObject shotgun;
     Shotgun shotgunScript;
 
+    GameObject minigunModel;
+    GameObject pistolModel;
+    GameObject shotgunModel;
+
     private void Start()
     {
         player = GameObject.Find("Player");
@@ -16,11 +20,15 @@ public class ShotgunItem : MonoBehaviour
         shotgun = player.transform.GetChild(6).gameObject;
         minigun = player.transform.GetChild(7).gameObject;
 
-
-
+        pistolModel = player.transform.GetChild(4).gameObject;
+        shotgunModel = player.transform.GetChild(9).gameObject;
+        minigunModel = player.transform.GetChild(8).gameObject;
 
     }
-
+    void Update()
+    {
+        Destroy(this.gameObject, 4f);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -36,7 +44,11 @@ public class ShotgunItem : MonoBehaviour
                 minigun.SetActive(false);
                 shotgun.SetActive(true);
                 shotgunScript.cont = 0;
-                
+
+                pistolModel.SetActive(false);
+                shotgunModel.SetActive(true);
+                minigunModel.SetActive(false);
+
             }
             Destroy(this.gameObject);
         }

@@ -27,7 +27,7 @@ public class Pistol : Weapon
         {
             nextShot = Time.time + fireRate;
             Shoot();
-            sonidoDisparo.PlayClip();
+            sonidoDisparo.PlayClip(0);
         }
         if (Input.GetMouseButtonUp(0))
         {
