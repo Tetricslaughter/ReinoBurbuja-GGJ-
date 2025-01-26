@@ -14,7 +14,7 @@ public class Shotgun : Weapon
         id = "Escopeta";
         cont = 0;
         nextShot = 0;
-        this.fireRate = 0.5f;
+        //this.fireRate = 0.5f;
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class Shotgun : Weapon
         {
           // particleSystem.Stop(); 
         }
-        if (cont == 10) 
+        if (cont == maxAmmo) 
         {
             pistol.SetActive(true);
             shotgun.SetActive(false);

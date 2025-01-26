@@ -38,7 +38,7 @@ public class Minigun : Weapon
             timeCount += 1 * Time.deltaTime;
         }
       
-        if (timeCount > 15) 
+        if (timeCount > 8) 
         {
           minigun.SetActive(false);
           pistol.SetActive(true);

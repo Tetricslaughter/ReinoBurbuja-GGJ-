@@ -14,7 +14,7 @@ public class Pistol : Weapon
     {
         this.id = "Pistola";
         this.damage = 3.0f;
-        this.fireRate = 0.7f;
+        //this.fireRate = 0.7f;
         nextShot = 0;
 
     }

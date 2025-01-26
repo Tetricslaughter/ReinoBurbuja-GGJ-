@@ -4,6 +4,7 @@ public class CastleScript : MonoBehaviour
 {
     public int currentHp;
     public int maxHp;
+    public PantallaDerrota pantallaDerrota;
     private void Start()
     {
 
@@ -23,5 +24,6 @@ public class CastleScript : MonoBehaviour
     void DestroyCastle() 
     {
         Debug.Log("Castillo destruido");
+        pantallaDerrota.CambiarDerrota(true);
     }
 }
