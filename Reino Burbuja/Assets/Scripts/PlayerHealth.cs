@@ -4,7 +4,8 @@ public class PlayerHealth : MonoBehaviour
 {
    public int currentHp;
    public int maxhp;
-     void Start()
+    public PantallaDerrota pantallaDerrota;
+    void Start()
     {
         currentHp = maxhp;
     }
@@ -21,5 +22,6 @@ public class PlayerHealth : MonoBehaviour
     void DestroyPlayer() 
     {
         Debug.Log("player destruido");
+        pantallaDerrota.CambiarDerrota(true);
     }
 }
