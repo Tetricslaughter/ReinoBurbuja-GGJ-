@@ -5,20 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-<<<<<<< Updated upstream
-  - enabled: 1
-    path: Assets/Scenes/prueba.unity
-=======
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
->>>>>>> Stashed changes
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/MenuPrincipal.unity
     guid: 5c023c5c0495d9f40a8a4413e8360e13
   - enabled: 1
     path: Assets/a.unity
     guid: e95cf8857e10f7d479a7a23a8c38402b
-  m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
