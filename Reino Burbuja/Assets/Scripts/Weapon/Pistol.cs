@@ -6,6 +6,7 @@ public class Pistol : Weapon
 {
 
     [SerializeField] ParticleSystem particleSystem;
+    public SonidoDisparo sonidoDisparo;
    
     float nextShot;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,7 +27,7 @@ public class Pistol : Weapon
         {
             nextShot = Time.time + fireRate;
             Shoot();
-            
+            sonidoDisparo.PlayClip();
         }
         if (Input.GetMouseButtonUp(0))
         {
