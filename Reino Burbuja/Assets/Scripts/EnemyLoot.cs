@@ -10,8 +10,8 @@ public class EnemyLoot : MonoBehaviour
         Instantiate(items[randomIndex], transform.position, Quaternion.identity);
     }
 
-    void OnDestroy()
-    {
-        loot();
-    }
+    //void OnDestroy()
+    //{
+    //    loot();
+    //}
 }

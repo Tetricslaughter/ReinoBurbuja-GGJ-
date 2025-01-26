@@ -9,7 +9,7 @@ public class MoveCharacter : MonoBehaviour
     float speed;
     void Start()
     {
-        speed =10f;
+        speed =200f;
         controller = GetComponent<CharacterController>();
     }
 
@@ -17,6 +17,7 @@ public class MoveCharacter : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        controller.Move(new Vector3(horizontal, 0, vertical) *Time.deltaTime * speed);
+        controller.SimpleMove(new Vector3(horizontal, 0, vertical) *Time.deltaTime * speed);
+        
     }
 }
