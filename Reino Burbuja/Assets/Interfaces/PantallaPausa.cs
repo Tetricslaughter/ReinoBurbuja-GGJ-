@@ -30,8 +30,8 @@ public class PantallaPausa : MonoBehaviour
                 Pausa = true;
 
                 Time.timeScale = 0;
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                //Cursor.visible = true;
+                //Cursor.lockState = CursorLockMode.None;
             }
             else
             {
@@ -49,8 +49,8 @@ public class PantallaPausa : MonoBehaviour
         Pausa = false;
 
         Time.timeScale = 1;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void IrAlMenu(int NombreMenu)

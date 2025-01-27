@@ -9,6 +9,9 @@ public class Minigun : Weapon
     [SerializeField] ParticleSystem particleSystem;
     public SonidoDisparo sonidoDisparo;
 
+    [SerializeField] GameObject pistolModel;
+    [SerializeField] GameObject minigunModel;
+
 
     public float timeCount;
     
@@ -28,23 +31,27 @@ public class Minigun : Weapon
         if (Input.GetMouseButtonDown(0) && minigun.activeInHierarchy)
         {
            Shoot();
-            
+            sonidoDisparo.PlayClip(1);
         }
         if (Input.GetMouseButtonUp(0)) 
         {
            particleSystem.Stop();
+           sonidoDisparo.StopClip();
         }
         if (Input.GetMouseButton(0) && minigun.activeInHierarchy)
         {
             timeCount += 1 * Time.deltaTime;
-            //sonidoDisparo.PlayClipontinou();
+            
         }
       
         if (timeCount > 8) 
         {
           minigun.SetActive(false);
-          pistol.SetActive(true);
-          timeCount = 0;
+            sonidoDisparo.StopClip();
+            pistol.SetActive(true);
+            minigunModel.SetActive(false);
+            pistolModel.SetActive(true);
+            timeCount = 0;
         //    scriptMinigun.enabled = false;
         //    scriptPistol.enabled = true;
         }

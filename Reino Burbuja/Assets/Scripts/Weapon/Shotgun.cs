@@ -6,7 +6,11 @@ public class Shotgun : Weapon
     [SerializeField] ParticleSystem particleSystem;
     [SerializeField] GameObject pistol;
     [SerializeField] GameObject shotgun;
-    
+
+    [SerializeField] GameObject pistolM;
+    [SerializeField] GameObject shotgunM;
+    public SonidoDisparo sonidoDisparo;
+
     float nextShot;
     public  int cont;
     void Start()
@@ -24,6 +28,7 @@ public class Shotgun : Weapon
         {
             nextShot = Time.time + fireRate;
             particleSystem.Play();
+            sonidoDisparo.PlayClip(2);
             cont++;
         }
         if (Input.GetMouseButtonUp(0)) 
@@ -34,7 +39,10 @@ public class Shotgun : Weapon
         {
             pistol.SetActive(true);
             shotgun.SetActive(false);
-            
+
+            pistolM.SetActive(true);
+            shotgunM.SetActive(false);
+
             cont = 0;
       //      scriptShotgun.enabled =false;
       //      scriptPistol.enabled =true;
